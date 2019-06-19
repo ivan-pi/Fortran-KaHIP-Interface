@@ -1,6 +1,6 @@
 module kahip_interface
 
-    use, intrinsic :: iso_c_binding, only: c_int, c_double, c_bool
+    use, intrinsic :: iso_c_binding, only: c_int, c_double, c_bool, c_ptr
     implicit none
     private
 
@@ -70,7 +70,7 @@ module kahip_interface
         !                     int* num_separator_vertices, int** separator); 
         subroutine node_separator(n,vwgt,xadj,adjcwgt,adjncy,nparts,imbalance,suppress_output,&
             seed,mode,num_separator_vertices,separator) bind(C,name="node_separator")
-            import c_int, c_double, c_bool
+            import c_int, c_double, c_bool, c_ptr
             integer(c_int), intent(in) :: n
             integer(c_int), intent(in), optional :: vwgt(n)
             integer(c_int), intent(in) :: xadj(n+1)
@@ -82,7 +82,7 @@ module kahip_interface
             integer(c_int), intent(in), value :: seed
             integer(c_int), intent(in), value :: mode
             integer(c_int), intent(out) :: num_separator_vertices
-            type(c_ptr), intent(out) :: node_separator ! int** 
+            type(c_ptr), intent(out) :: separator ! int** 
         end subroutine
 
     end interface
