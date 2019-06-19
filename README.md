@@ -1,6 +1,6 @@
 # Fortran-KaHIP-Interface
 
-A modern Fortran interface to the [KaHIP] (http://algo2.iti.kit.edu/documents/kahip/index.html) graph partitioning framework
+A Fortran interface to the [KaHIP](http://algo2.iti.kit.edu/documents/kahip/index.html) graph partitioning framework.
 
 * [Getting started](#getting-started)
 
@@ -41,7 +41,7 @@ Running the test yields the output
 ```Fortran
 call kaffpa(n,vwgt,xadj,adjcwgt,adjncy,nparts,imbalance,suppress_output,&
             seed,mode,edgecut,part)
-            
+
 call kaffpa_balance_NE(n,vwgt,xadj,adjcwgt,adjncy,nparts,imbalance,suppress_output,&
             seed,mode,edgecut,part)
 
